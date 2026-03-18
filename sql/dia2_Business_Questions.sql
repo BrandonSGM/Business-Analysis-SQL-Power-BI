@@ -250,11 +250,10 @@ CROSS JOIN total_revenue
 GROUP BY 1
 ORDER BY 2 DESC;
 /*Revenue: North (29.01%), East (25.00%), West (24.12%), South(21.86%)*/
-/*Las regiones tienen un aporte homogeneo en el Revenue total, sin embargo la region North concentra el 29.01%,
-lo cual indica que tiene ingresos más altos, probablemente por concentración de clientes Gold, productos de alto valor,
-mayor frecuencia de compra, demostrando un gran potencial para generar más revenue. Por otra parte 
-la region South refleja el revenue más bajo, lo cual indica que tiene potencial de crecimiento para diseñar estrategias 
-con el objetivo de incrementar el ticket promedio*/
+/*North concentra el mayor revenue total (29.01%), lo que evidencia mayor
+capacidad comercial relativa frente a las demás regiones,
+posiblemente asociado a mayor ticket promedio, frecuencia o mix de productos.
+Por otra parte la region South refleja el revenue más bajo, lo cual indica que tiene potencial de crecimiento comercial*/
 
 -- Step 4.2: Calculation of profit by region
 WITH total_profit AS(
@@ -293,15 +292,14 @@ ON s.product_id = p.product_id
 GROUP BY region
 ORDER BY 2 DESC;
 /*Margin:  West (50.00%), East (42.15%), North (41.95%), South(41.23%)*/
-/*Todas las regiones presentan homogeneidad de margenes, sobresale la region West, debido a su participación promedio 
-en el revenue total pero superando a las demas regiones en rentabilidad, se evidencia que es una region estategica 
-para aumentar el ticket promedio con procesos similares para mantener la rentabilidad y aumentar la rentabilidad total*/
+/*West presenta el margen más alto (50%), superando claramente al resto
+de regiones, lo que evidencia una estructura comercial altamente eficiente y la
+convierte en la principal zona estratégica para escalar crecimiento rentable.*/
 
 /*RECOMENDACIONES
-1. Mantener el revenue de la region North optimizando procesos para aumentar su rentabilidad
-2. Priorizar el aumento del Revenue en la region West debido a su alta rentabilidad
-3. Analizar procesos comerciales en las regiones Noth y West para replicarlos a las demas zonas 
-incrementando el Revenue y Margen total*/
+1. Escalar West como región prioritaria de crecimiento rentable.
+2. Escalar West como región prioritaria de crecimiento rentable.
+3. Desarrollar South sin sacrificar margen.*/
 
-/*La zona West demuestra un gran potencial de crecimiento debido a su baja participación en el Revenue Total
-pero con una rentabilidad alta siendo el motor principal de rentabilidad */
+/*West representa la región más eficiente del negocio, combinando participación
+media en revenue con el margen más alto, lo que la convierte en el principal motor de rentabilidad potencial. */
