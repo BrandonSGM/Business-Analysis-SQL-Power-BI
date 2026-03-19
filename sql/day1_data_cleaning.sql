@@ -60,6 +60,7 @@ SET channel = INITCAP(TRIM(channel));
 UPDATE sales
 SET region = INITCAP(TRIM(region));
 
+
 -- Step 2.4: Creation of the discount_status column to control discount invalid values 
 ALTER TABLE sales 
 ADD COLUMN discount_status VARCHAR(20);
@@ -110,3 +111,15 @@ analítico temporal para continuidad del análisis, pero los resultados deben
 interpretarse considerando que una cuarta parte del revenue depende de 
 registros con posible inconsistencia operativa.
 */
+
+-- ==========================================
+-- STEP 4 - DATA STANDARDIZATION PRODUCT TABLE
+-- ==========================================
+
+-- Step 4.1: Standardization of product_name
+UPDATE products
+SET product_name = INITCAP(TRIM(product_name));
+-- Step 4.2: Validation of standardization product_name
+SELECT * FROM products;
+-- Step 4.3: Validation of category
+SELECT DISTINCT category FROM products;
