@@ -168,6 +168,7 @@ Customer profitability changes materially depending on loyalty level and product
 sql-sales-analysis/
 │── README.md
 │── queries/
+│   ├── day0_DDL.sql
 │   ├── day1_data_validation.sql
 │   ├── day2_profitability_analysis.sql
 │   ├── day3_cross_tabulation_analysis.sql
@@ -350,6 +351,7 @@ La rentabilidad del cliente varía significativamente según su nivel de fideliz
 sql-sales-analysis/
 │── README.md
 │── queries/
+│ ├── day0_DDL.sql
 │ ├── day1_data_validation.sql
 │ ├── day2_profitability_analysis.sql
 │ ├── day3_cross_tabulation_analysis.sql
