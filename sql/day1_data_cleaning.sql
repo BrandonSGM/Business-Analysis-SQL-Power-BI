@@ -85,3 +85,28 @@ WHERE quantity IS NULL;
 SELECT COUNT(*)
 FROM sales
 WHERE discount_status = 'Anomaly';
+
+-- Impact of anomalies on financial analysis
+WITH total_revenue AS (
+	SELECT SUM(quantity * unit_price * (1-COALESCE(discount,0))) AS total
+	FROM sales
+)
+
+SELECT 
+	ROUND(
+		SUM(quantity * unit_price)
+		*100.0 / MAX(total)
+	,2) AS anomaly_revenue_pct
+FROM sales
+CROSS JOIN total_revenue
+WHERE discount IS NULL;
+
+/*Se identificó que los registros con discount nulo representan el 25.03% del
+revenue total, lo que evidencia que las anomalías no son marginales y 
+tienen impacto financiero relevante.
+
+Por esta razón, el uso de COALESCE(discount,0) se mantiene como supuesto 
+analítico temporal para continuidad del análisis, pero los resultados deben 
+interpretarse considerando que una cuarta parte del revenue depende de 
+registros con posible inconsistencia operativa.
+*/

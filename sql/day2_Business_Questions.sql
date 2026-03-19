@@ -6,7 +6,7 @@
 -- ==========================================
 -- STEP 1 - REVENUE, PROFIT AND MARGIN BY CHANNEL
 -- ==========================================
-
+-- Assumption: NULL discount treated as 0 for analytical continuity
 -- Step 1.1: Calculation of revenue by channel
 WITH revenue AS (SELECT
 	ROUND(SUM((quantity * unit_price)*(1-COALESCE(discount,0))),2) AS total_revenue
@@ -73,7 +73,7 @@ lo que sugiere una eficiencia operativa consistente y una capacidad comparable d
 -- ==========================================
 -- STEP 2 - REVENUE, PROFIT, MARGIN BY PRODUCT CATEGORY
 -- ==========================================
-
+-- Assumption: NULL discount treated as 0 for analytical continuity
 -- Step 2.1: Calculation of Revenue by product category
 WITH total_revenue AS(
 	SELECT ROUND(SUM(
@@ -151,7 +151,7 @@ de su estructura comercial.*/
 -- ==========================================
 -- STEP 3 - REVENUE, PROFIT, MARGIN BY LOYALTY LEVEL
 -- ==========================================
-
+-- Assumption: NULL discount treated as 0 for analytical continuity
 -- Step 3.1: Calculation of revenue by loyalty level
 WITH total_revenue AS(
 	SELECT ROUND(SUM(
@@ -232,7 +232,7 @@ consolidándose como el segmento estratégico prioritario para crecimiento renta
 -- ==========================================
 -- STEP 4 - REVENUE, PROFIT, MARGIN BY REGION
 -- ==========================================
-
+-- Assumption: NULL discount treated as 0 for analytical continuity
 -- Step 4.1: Calculation of revenue by region
 WITH total_revenue AS(
 	SELECT ROUND(SUM(
@@ -298,7 +298,7 @@ convierte en la principal zona estratégica para escalar crecimiento rentable.*/
 
 /*RECOMENDACIONES
 1. Escalar West como región prioritaria de crecimiento rentable.
-2. Escalar West como región prioritaria de crecimiento rentable.
+2. Analizar diferencias entre North vs West.
 3. Desarrollar South sin sacrificar margen.*/
 
 /*West representa la región más eficiente del negocio, combinando participación

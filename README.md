@@ -19,6 +19,35 @@ Se preservaron los valores nulos de discount para no distorsionar la estructura 
 # Información Clave
 El principal riesgo analitico detectado fue el 20.8% de valores nulos en discount, lo cual afecta directamente el cálculo revenue, profit y margen. En cambio de una imputación artifical de valores, las anomalías fueron preservadas para una investigación posterior. 
 
+## Impacto analítico de anomalías detectadas
+
+Durante la fase de limpieza se identificó que el 20.8% de los registros de ventas presentan valores nulos en el campo `discount`, por lo que fueron clasificados como anomalías y marcados para seguimiento.
+
+Posteriormente se evaluó el impacto financiero de estas anomalías y se encontró que dichos registros representan el **25.03% del revenue total**, lo que demuestra que no se trata de inconsistencias marginales sino de datos con peso económico relevante.
+
+### Decisión analítica aplicada
+
+Para mantener continuidad en el análisis financiero de Revenue, Profit y Margin, los valores nulos en `discount` fueron tratados temporalmente como cero mediante:
+
+`COALESCE(discount,0)`
+
+Esto implica asumir que la ausencia de valor corresponde a ausencia de descuento.
+
+### Consideración metodológica
+
+Dado que una cuarta parte del revenue depende de registros con discount nulo, los resultados financieros deben interpretarse bajo este supuesto analítico temporal.
+
+### Recomendación de negocio
+
+Se recomienda validar con el área operativa o con la fuente transaccional si estos valores corresponden a:
+
+* descuentos no registrados
+* errores de captura
+* fallas del sistema de ventas
+
+El objetivo es reducir estas inconsistencias a menos del 1% y fortalecer la confiabilidad del análisis financiero futuro.
+
+
 # Herramientas Implementadas
  - PostgreSQL
  - SQL (Data Cleaning) 
