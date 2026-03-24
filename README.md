@@ -3,11 +3,18 @@
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-Analytics-F2C811?logo=powerbi&logoColor=black)
 ![Business Analysis](https://img.shields.io/badge/Business-Analysis-green)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Project-Completed-green)
 
 [English](#english) | [Español](#español)
 
 # English
+## 📸 Dashboard Preview
+![Dashboard](./images/dashboard-preview.png)
+
+## Project Workflow
+
+SQL → Analytical Views → Star Schema → Power BI Dashboard → Business Insights
+
 ## Tools Used
 
 * PostgreSQL
@@ -120,25 +127,9 @@ Bronze customers frequently achieve stronger margins in premium combinations.
 
 # Executive Summary
 
-## Revenue Insights
-
-Furniture dominates product presence in revenue ranking, while Accessories reveal unexpected product-level strength.
-
-## Profitability Insights
-
-Electronics and Furniture concentrate the strongest financial efficiency.
-
-## Discount Risks
-
-Discount policies improve volume but weaken structural profitability.
-
-## Product Opportunities
-
-Product_19 emerges as the strongest strategic asset in the portfolio.
-
-## Customer Insight
-
-Customer profitability changes materially depending on loyalty level and product mix.
+Furniture leads revenue generation, while Electronics delivers stronger profit efficiency.  
+Discount policies increase sales volume but materially reduce structural margin.  
+Gold customers concentrate the highest profit contribution across strategic products.
 
 ---
 
@@ -151,6 +142,14 @@ Customer profitability changes materially depending on loyalty level and product
 * Replicate efficient Bronze purchasing patterns
 
 ---
+# Business Impact
+
+The project simulates how a business analyst transforms transactional data into strategic decisions:
+
+- Identify profit leakage
+- Optimize discount strategy
+- Detect high-value products
+- Improve customer profitability
 
 # SQL Techniques Applied
 
@@ -158,11 +157,30 @@ Customer profitability changes materially depending on loyalty level and product
 * CASE WHEN
 * COALESCE
 * LEFT JOIN
+* Views
 * Aggregations
 * Margin calculations
 * Profit contribution analysis
 * Customer segmentation
 
+# Data Model Architecture
+
+This project follows a star schema:
+
+- Fact table: analytics_sales_base
+- Dimension table: dim_products
+- Dimension table: dim_customers
+
+The analytical views were created in PostgreSQL and connected directly into Power BI for scalable reporting.
+
+# Power BI Measures
+
+Main DAX measures:
+
+- Total Revenue
+- Total Profit
+- Margin %
+- Profit Contribution %
 ---
 
 # Repository Structure
@@ -175,10 +193,16 @@ sql-sales-analysis/
 │   ├── day1_data_validation.sql
 │   ├── day2_profitability_analysis.sql
 │   ├── day3_cross_tabulation_analysis.sql
+│   ├── views.sql
 │── dataset/
 │   ├── sales.csv
 │   ├── products.csv
 │   ├── customers.csv
+│── dashboard/
+│   ├── Final Sales Analysis Performance Dashboard.pbix
+│── images/
+│   ├── dashboard-preview.png
+
 ```
 
 ---
@@ -187,7 +211,20 @@ sql-sales-analysis/
 
 This project demonstrates how SQL can be used not only to query data, but to support commercial interpretation and business decision-making.
 
+## 👤 Author
+
+Brandon Gomez Murcia  
+Data Analyst | SQL | Power BI | DAX | Power Query
+
 # Español
+## 📸 Vista previa del panel de control
+
+![Panel de control](./images/dashboard-preview.png)
+
+## Flujo de trabajo del proyecto
+
+SQL → Vistas analíticas → Esquema en estrella → Panel de Power BI → Información empresarial
+
 ## Herramientas utilizadas
 
 * PostgreSQL
@@ -301,29 +338,13 @@ Los clientes Oro generan la mayor concentración de ganancias en productos estra
 
 Los clientes Bronce suelen obtener márgenes más altos en combinaciones premium.
 
---
+---
 
 # Resumen Ejecutivo
 
-## Análisis de Ingresos
-
-El mobiliario domina la presencia de productos en el ranking de ingresos, mientras que los accesorios revelan una fortaleza inesperada a nivel de producto.
-
-## Análisis de Rentabilidad
-
-Electrónica y Mobiliario concentran la mayor eficiencia financiera.
-
-## Riesgos de Descuento
-
-Las políticas de descuento mejoran el volumen, pero debilitan la rentabilidad estructural.
-
-## Oportunidades de Producto
-
-El Producto_19 emerge como el activo estratégico más sólido de la cartera.
-
-## Información sobre el cliente
-
-La rentabilidad del cliente varía significativamente según su nivel de fidelización y la combinación de productos.
+El mobiliario lidera la generación de ingresos, mientras que la electrónica ofrece una mayor eficiencia en las ganancias.
+Las políticas de descuento aumentan el volumen de ventas, pero reducen significativamente el margen estructural.
+Los clientes Gold concentran la mayor contribución a las ganancias en productos estratégicos.
 
 ---
 
@@ -334,6 +355,16 @@ La rentabilidad del cliente varía significativamente según su nivel de fideliz
 * Reevaluar el precio y la estructura de costos del producto 7
 * Mejorar la conversión del segmento Plata en productos de alto margen
 * Replicar patrones de compra eficientes del segmento Bronce
+
+---
+# Impacto en el negocio
+
+El proyecto simula cómo un analista de negocios transforma los datos transaccionales en decisiones estratégicas:
+
+- Identificar pérdidas de beneficios
+- Optimizar la estrategia de descuentos
+- Detectar productos de alto valor
+- Mejorar la rentabilidad del cliente
 
 ---
 
@@ -350,20 +381,48 @@ La rentabilidad del cliente varía significativamente según su nivel de fideliz
 
 ---
 
+# Arquitectura del modelo de datos
+
+Este proyecto sigue un esquema de estrella:
+
+- Tabla de hechos: analytics_sales_base
+- Tabla de dimensiones: dim_products
+- Tabla de dimensiones: dim_customers
+
+Las vistas analíticas se crearon en PostgreSQL y se conectaron directamente a Power BI para generar informes escalables.
+
+---
+
+# Medidas de Power BI
+
+Principales medidas DAX:
+
+- Ingresos totales
+- Beneficio total
+- Margen %
+- Contribución al beneficio %
+
+---
+
 # Estructura del repositorio
 
 ```plaintext
 sql-sales-analysis/
 │── README.md
 │── queries/
-│ ├── day0_DDL.sql
-│ ├── day1_data_validation.sql
-│ ├── day2_profitability_analysis.sql
-│ ├── day3_cross_tabulation_analysis.sql
+│   ├── day0_DDL.sql
+│   ├── day1_data_validation.sql
+│   ├── day2_profitability_analysis.sql
+│   ├── day3_cross_tabulation_analysis.sql
+│   ├── views.sql
 │── dataset/
-│ ├── sales.csv
-│ ├── products.csv
-│ ├── customers.csv
+│   ├── sales.csv
+│   ├── products.csv
+│   ├── customers.csv
+│── dashboard/
+│   ├── Final Sales Analysis Performance Dashboard.pbix
+│── images/
+│   ├── dashboard-preview.png
 ```
 
 ---
@@ -371,3 +430,10 @@ sql-sales-analysis/
 # Valor del proyecto
 
 Este proyecto demuestra cómo SQL puede utilizarse no solo para consultar datos, sino también para respaldar la interpretación comercial y la toma de decisiones empresariales.
+
+---
+
+## 👤 Autor
+
+Brandon Gomez Murcia  
+Data Analyst | SQL | Power BI | DAX | Power Query
