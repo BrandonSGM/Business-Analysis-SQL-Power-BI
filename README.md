@@ -186,7 +186,7 @@ Main DAX measures:
 # Repository Structure
 
 ```plaintext
-sql-sales-analysis/
+Business-Analysis-SQL-POWER BI/
 │── README.md
 │── queries/
 │   ├── day0_DDL.sql
@@ -407,7 +407,7 @@ Principales medidas DAX:
 # Estructura del repositorio
 
 ```plaintext
-sql-sales-analysis/
+Business-Analysis-SQL-POWER BI/
 │── README.md
 │── queries/
 │   ├── day0_DDL.sql
