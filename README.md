@@ -3,7 +3,7 @@
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?logo=postgresql&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-Analytics-F2C811?logo=powerbi&logoColor=black)
 ![Business Analysis](https://img.shields.io/badge/Business-Analysis-green)
-![Status](https://img.shields.io/badge/Status-In%50Progress-orange)
+![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
 
 [English](#english) | [Español](#español)
 
@@ -12,9 +12,12 @@
 
 * PostgreSQL
 * SQL
+* Power BI
 * Business Analysis
 
 ---
+The dashboard was built using a star schema model, integrating PostgreSQL analytical views as fact and dimension tables to ensure scalable filtering and professional semantic modeling in Power BI.
+
 
 ## Project Objective
 
@@ -189,9 +192,11 @@ This project demonstrates how SQL can be used not only to query data, but to sup
 
 * PostgreSQL
 * SQL
+* Power BI
 * Análisis de negocio
 
 ---
+El panel de control se construyó utilizando un modelo de esquema en estrella, integrando vistas analíticas de PostgreSQL como tablas de hechos y dimensiones para garantizar un filtrado escalable y un modelado semántico profesional en Power BI.
 
 ## Objetivo del proyecto
 
